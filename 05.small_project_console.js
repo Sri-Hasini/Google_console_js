@@ -45,7 +45,7 @@ if (q3 == "yes" || q3 == "Yes") {
         else if (Number(choice) >= burgertype.length) continue;
         var quantity = Number(prompt("Enter the number of burgers you want in this type : "));
         var calc = prices[Number(choice) - 1] * quantity;
-        if (cur_bal - calc < 0) { 
+        if (cur_bal - (total + calc) < 0) { 
             console.log("Sorry! You can't order further as you don't have enough balance");
             console.log("You have ordered " + quantity + " " + burgertype[Number(choice) - 1] + "(s) which costs " + calc + "$");
             console.log("Your current balance after ordering this item is " + cur_bal - total_cost + "$");
