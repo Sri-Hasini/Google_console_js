@@ -1,5 +1,6 @@
 // Logging part
 console.log("Hello! Welcome to the food app!\n");
+console.log();
 console.log("Let's create an account here");
 var username = prompt("Create a username : ");
 var password = prompt("Create a password : ");
@@ -13,6 +14,7 @@ while (pass_confirm != password) {
 }
 console.log("Hurray! You have successfully logged in!!\n");
 
+console.log();
 // Adding balance
 console.log("Lets add some balance if you wish to do so.");
 var cur_bal = 500;
@@ -27,6 +29,7 @@ else {
     console.log("Great!");
 }
 
+console.log();
 // Ordering burger
 console.log("\nLets go into the burger section");
 var q3 = prompt("Would you like to have a burger? (yes/no)");
@@ -48,11 +51,13 @@ if (q3 == "yes" || q3 == "Yes") {
         if (cur_bal - (total_cost + calc) < 0) { 
             console.log("Sorry! You can't order further as you don't have enough balance");
             console.log("Your current balance after ordering these item is " + (cur_bal - total_cost) + "$\n");
+            console.log();
             break;
         }
         total_cost += calc;
         console.log("You have ordered " + quantity + " " + burgertype[Number(choice) - 1] + "(s) which costs " + calc + "$");
         console.log("Your current balance after ordering this item is " + (cur_bal - total_cost) + "$\n");
+        console.log();
     }
     console.log("Thankyou! you can collect your order in few minutes at the counter!!\n");
 }
