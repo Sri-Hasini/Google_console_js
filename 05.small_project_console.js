@@ -17,7 +17,7 @@ console.log("Hurray! You have successfully logged in!!");
 console.log("Lets add some balance if you wish to do so.");
 var cur_bal = 500;
 console.log("Your current balance is " + cur_bal + "$");
-var q1 = prompt("Would you like to add money to your account?");
+var q1 = prompt("Would you like to add money to your account? (yes/no)");
 if (q1 == "yes" || q1 == "Yes") {
     var q2 = Number(prompt("How much money would you like to add ?"));
     cur_bal += q2;
@@ -30,12 +30,12 @@ else {
 // Ordering burger
 console.log("Lets go into the burger section");
 var q3 = prompt("Would you like to have a burger?");
-if (q3 == "yes" || "Yes") {
+if (q3 == "yes" || q3 == "Yes") {
     console.log("Which type of burger would you like to have from the below options : ");
     var burgertype = ["Cheesy chicken burger", "Cheese-less chicken burger", "Veg tikka burger", "panner cheese burger", "Fish burger"];
     var prices = [50, 45, 35, 40, 50];
     for (var i = 0; i < burgertype.length; i++) {
-        console.log((i + 1) + ". " + burgertype[i] + "                  - " + prices[i] + "$");
+        console.log((i + 1) + ". " + burgertype[i] + "  -  " + prices[i] + "$");
     }
     console.log("Please enter your order by entering the position of the burger and number of burgers you want in that type and finally enter ok, if you are done");
     var total_cost = 0;
@@ -53,7 +53,7 @@ if (q3 == "yes" || "Yes") {
         }
         total_cost += calc;
         console.log("You have ordered " + quantity + " " + burgertype[Number(choice) - 1] + "(s) which costs " + calc + "$");
-        console.log("Your current balance after ordering this item is " + cur_bal - total_cost + "$");
+        console.log("Your current balance after ordering this item is " + (cur_bal - total_cost) + "$");
     }
     console.log("Thankyou! you can collect your order in few minutes at the counter!!");
 }
