@@ -1,5 +1,5 @@
 // Logging part
-console.log("Hello! Welcome to the food app!");
+console.log("Hello! Welcome to the food app!\n");
 console.log("Let's create an account here");
 var username = prompt("Create a username : ");
 var password = prompt("Create a password : ");
@@ -11,7 +11,7 @@ var pass_confirm = prompt("Enter your password for confirmation : ");
 while (pass_confirm != password) {
     pass_confirm = prompt("Incorrect password! Please enter the valid password");
 }
-console.log("Hurray! You have successfully logged in!!");
+console.log("Hurray! You have successfully logged in!!\n");
 
 // Adding balance
 console.log("Lets add some balance if you wish to do so.");
@@ -28,16 +28,16 @@ else {
 }
 
 // Ordering burger
-console.log("Lets go into the burger section");
+console.log("\nLets go into the burger section");
 var q3 = prompt("Would you like to have a burger? (yes/no)");
 if (q3 == "yes" || q3 == "Yes") {
-    console.log("Which type of burger would you like to have from the below options : ");
+    console.log("\nWhich type of burger would you like to have from the below options : ");
     var burgertype = ["Cheesy chicken burger", "Cheese-less chicken burger", "Veg tikka burger", "panner cheese burger", "Fish burger"];
     var prices = [50, 45, 35, 40, 50];
     for (var i = 0; i < burgertype.length; i++) {
         console.log((i + 1) + ". " + burgertype[i] + "  -  " + prices[i] + "$");
     }
-    console.log("Please enter your order by entering the position of the burger and number of burgers you want in that type and finally enter ok, if you are done");
+    console.log("\nPlease enter your order by entering the position of the burger and number of burgers you want in that type and finally enter ok, if you are done\n");
     var total_cost = 0;
     while (1) {
         var choice = prompt("Enter the burger's position in the given menu : ");
@@ -47,15 +47,14 @@ if (q3 == "yes" || q3 == "Yes") {
         var calc = prices[Number(choice) - 1] * quantity;
         if (cur_bal - (total_cost + calc) < 0) { 
             console.log("Sorry! You can't order further as you don't have enough balance");
-            console.log("You have ordered " + quantity + " " + burgertype[Number(choice) - 1] + "(s) which costs " + calc + "$");
-            console.log("Your current balance after ordering this item is " + (cur_bal - total_cost) + "$");
+            console.log("Your current balance after ordering these item is " + (cur_bal - total_cost) + "$\n");
             break;
         }
         total_cost += calc;
         console.log("You have ordered " + quantity + " " + burgertype[Number(choice) - 1] + "(s) which costs " + calc + "$");
-        console.log("Your current balance after ordering this item is " + (cur_bal - total_cost) + "$");
+        console.log("Your current balance after ordering this item is " + (cur_bal - total_cost) + "$\n");
     }
-    console.log("Thankyou! you can collect your order in few minutes at the counter!!");
+    console.log("Thankyou! you can collect your order in few minutes at the counter!!\n");
 }
 else {
     console.log("Have a great day!");
