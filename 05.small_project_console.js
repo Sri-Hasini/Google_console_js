@@ -29,7 +29,7 @@ else {
 
 // Ordering burger
 console.log("Lets go into the burger section");
-var q3 = prompt("Would you like to have a burger?");
+var q3 = prompt("Would you like to have a burger? (yes/no)");
 if (q3 == "yes" || q3 == "Yes") {
     console.log("Which type of burger would you like to have from the below options : ");
     var burgertype = ["Cheesy chicken burger", "Cheese-less chicken burger", "Veg tikka burger", "panner cheese burger", "Fish burger"];
@@ -42,13 +42,13 @@ if (q3 == "yes" || q3 == "Yes") {
     while (1) {
         var choice = prompt("Enter the burger's position in the given menu : ");
         if (choice == "ok") break;
-        else if (Number(choice) >= burgertype.length) continue;
+        else if (Number(choice) > burgertype.length) continue;
         var quantity = Number(prompt("Enter the number of burgers you want in this type : "));
         var calc = prices[Number(choice) - 1] * quantity;
         if (cur_bal - (total_cost + calc) < 0) { 
             console.log("Sorry! You can't order further as you don't have enough balance");
             console.log("You have ordered " + quantity + " " + burgertype[Number(choice) - 1] + "(s) which costs " + calc + "$");
-            console.log("Your current balance after ordering this item is " + cur_bal - total_cost + "$");
+            console.log("Your current balance after ordering this item is " + (cur_bal - total_cost) + "$");
             break;
         }
         total_cost += calc;
